@@ -15,6 +15,7 @@ class CreateFederalDistrictsTable extends Migration
     {
         Schema::create('federal_districts', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->timestamps();
         });
     }
