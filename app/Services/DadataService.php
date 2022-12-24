@@ -3,18 +3,13 @@
 namespace App\Services;
 
 use Dadata\DadataClient;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
 
 class DadataService
 {
-    public function init()
+    public DadataClient $dadataClient;
+
+    public function __construct()
     {
-        $token = env('DADATA_API_KEY');
-        $secret = env('DADATA_SECRET_KEY');
-        $dadata = new DadataClient($token, $secret);
-
-        dd($dadata->clean('address', 'лбм'));
-
+        $this->dadataClient = new DadataClient(env('DADATA_API_KEY'), env('DADATA_SECRET_KEY'));
     }
 }
