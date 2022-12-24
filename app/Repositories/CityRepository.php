@@ -3,6 +3,7 @@
 namespace App\Repositories;
 
 use App\Models\City;
+use App\Models\Direction;
 use App\Models\FederalDistrict;
 use App\Models\Region;
 use App\Services\DadataService;
@@ -21,7 +22,7 @@ class CityRepository
         City::query()->insert($cities);
     }
 
-    public function cleanCities(DadataService $dadataService)
+    public function cleanCities(DadataService $dadataService): void
     {
         $rawCities = City::query()
             ->doesntHave('federalDistrict')

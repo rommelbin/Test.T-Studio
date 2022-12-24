@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class City extends Model
 {
-    use HasFactory;
 
     public function federalDistrict(): HasOne
     {
